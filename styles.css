@@ -1,0 +1,2214 @@
+/* =========================
+   SHAWDY X MINU - DESIGN TOKENS
+========================= */
+:root {
+    --bg: #070604;
+    --bg-soft: #0d0b08;
+    --panel: rgba(18, 15, 10, 0.88);
+    --panel-solid: #12100c;
+    --panel-light: #1b1710;
+    --text: #fffaf0;
+    --muted: #aaa397;
+    --gold: #f4b942;
+    --gold-light: #ffe19a;
+    --gold-deep: #8a5a09;
+    --cyan: #54d8ff;
+    --purple: #9b6cff;
+    --magenta: #ff4fc3;
+    --green: #32e58d;
+    --red: #ff5f62;
+    --border: rgba(244, 185, 66, 0.18);
+    --border-soft: rgba(255, 255, 255, 0.08);
+    --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+    --radius-lg: 28px;
+    --radius-md: 20px;
+    --radius-sm: 12px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background:
+        radial-gradient(circle at 8% 2%, rgba(244, 185, 66, 0.09), transparent 28rem),
+        radial-gradient(circle at 92% 12%, rgba(84, 216, 255, 0.07), transparent 26rem),
+        var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    opacity: 0.13;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: linear-gradient(to bottom, black, transparent 88%);
+    mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+a {
+    color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(84, 216, 255, 0.8);
+    outline-offset: 4px;
+}
+
+.container {
+    width: min(1240px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 1000000;
+    padding: 10px 14px;
+    border-radius: 10px;
+    background: var(--gold);
+    color: #100b02;
+    font-weight: 800;
+    transform: translateY(-150%);
+    transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+/* =========================
+   SHAWDY X MINU - LOADER
+========================= */
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: grid;
+    place-items: center;
+    background: #050403;
+    opacity: 1;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+#loader.loader-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-mark {
+    position: relative;
+    width: 98px;
+    height: 98px;
+}
+
+.loader-mark img {
+    width: 74px;
+    height: 74px;
+    margin: 12px;
+    border-radius: 22px;
+}
+
+.loader-ring {
+    position: absolute;
+    inset: 0;
+    border: 2px solid rgba(244, 185, 66, 0.16);
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* =========================
+   SHAWDY X MINU - NAVIGATION
+========================= */
+.navbar {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-soft);
+    background: rgba(7, 6, 4, 0.82);
+    box-shadow: 0 10px 36px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(18px);
+}
+
+.nav-wrap {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+}
+
+.brand {
+    min-width: max-content;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.nav-logo {
+    width: 50px;
+    height: 50px;
+    flex: 0 0 auto;
+    border: 1px solid rgba(244, 185, 66, 0.36);
+    border-radius: 15px;
+    object-fit: cover;
+    box-shadow: 0 0 26px rgba(244, 185, 66, 0.16);
+}
+
+.brand-copy {
+    display: grid;
+    line-height: 1.05;
+}
+
+.brand-text {
+    font-family: "Orbitron", sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+}
+
+.brand-text b {
+    color: var(--gold);
+}
+
+.brand-copy small {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.nav-panel,
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-panel {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.nav-links {
+    gap: 4px;
+}
+
+.nav-links a {
+    padding: 10px 9px;
+    border-radius: 10px;
+    color: #d8d1c6;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links .nav-btn {
+    margin-left: 6px;
+    padding-inline: 13px;
+    border: 1px solid var(--border);
+    color: var(--gold-light);
+    background: rgba(244, 185, 66, 0.07);
+}
+
+.nav-links .nav-btn:hover {
+    color: #130e04;
+    background: var(--gold);
+    transform: translateY(-1px);
+}
+
+.status-box {
+    min-height: 34px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.035);
+    white-space: nowrap;
+}
+
+.open-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 12px var(--gold);
+}
+
+#status-text {
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.nav-toggle {
+    width: 44px;
+    height: 44px;
+    display: none;
+    place-content: center;
+    gap: 5px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    width: 19px;
+    height: 2px;
+    display: block;
+    border-radius: 999px;
+    background: var(--text);
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.nav-toggle.is-active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.is-active span:nth-child(2) { opacity: 0; }
+.nav-toggle.is-active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* =========================
+   SHAWDY X MINU - HERO
+========================= */
+.hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 150px 0 86px;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    z-index: -1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+.hero-glow {
+    position: absolute;
+    z-index: -2;
+    border-radius: 50%;
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+.hero-glow-one {
+    top: 14%;
+    right: 5%;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(244, 185, 66, 0.13), transparent 68%);
+}
+
+.hero-glow-two {
+    bottom: 0;
+    left: -10%;
+    width: 440px;
+    height: 440px;
+    background: radial-gradient(circle, rgba(84, 216, 255, 0.08), transparent 68%);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(380px, 0.92fr);
+    align-items: center;
+    gap: clamp(44px, 6vw, 88px);
+}
+
+.mini-badge,
+.section-kicker,
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.mini-badge {
+    margin-bottom: 20px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(244, 185, 66, 0.06);
+}
+
+.hero h1 {
+    display: grid;
+    margin-bottom: 22px;
+    font-family: "Orbitron", sans-serif;
+    line-height: 0.96;
+    text-transform: uppercase;
+}
+
+.hero-name {
+    max-width: 800px;
+    font-size: clamp(36px, 5.1vw, 70px);
+    letter-spacing: -0.045em;
+}
+
+.hero-name i {
+    color: var(--gold);
+    font-style: normal;
+}
+
+.hero-store {
+    margin-top: 8px;
+    color: transparent;
+    font-size: clamp(64px, 9.8vw, 138px);
+    letter-spacing: -0.06em;
+    -webkit-text-stroke: 1px rgba(244, 185, 66, 0.58);
+    background: linear-gradient(180deg, var(--gold-light), var(--gold), #8c5906);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 10px 28px rgba(244, 185, 66, 0.12));
+}
+
+.hero-lead {
+    max-width: 650px;
+    margin-bottom: 30px;
+    color: #bcb5aa;
+    font-size: clamp(16px, 1.6vw, 19px);
+    line-height: 1.75;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    min-height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 13px 20px;
+    border: 1px solid transparent;
+    border-radius: 13px;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.045em;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn.primary,
+.primary {
+    color: #171004;
+    background: linear-gradient(135deg, var(--gold-light), var(--gold) 55%, #d18b12);
+    box-shadow: 0 14px 30px rgba(244, 185, 66, 0.17);
+}
+
+.btn.primary:hover {
+    box-shadow: 0 18px 38px rgba(244, 185, 66, 0.26);
+}
+
+.btn.secondary,
+.secondary {
+    border-color: var(--border-soft);
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.045);
+}
+
+.btn.secondary:hover {
+    border-color: var(--border);
+    background: rgba(244, 185, 66, 0.07);
+}
+
+.btn.full {
+    width: 100%;
+}
+
+.trust-row {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    border-radius: 18px;
+    background: var(--border-soft);
+}
+
+.trust-row div {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+    padding: 14px 16px;
+    background: rgba(12, 10, 7, 0.96);
+}
+
+.trust-row strong {
+    color: var(--gold-light);
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+}
+
+.trust-row span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.hero-art-card {
+    position: relative;
+}
+
+.hero-art-frame {
+    position: relative;
+    padding: 8px;
+    border: 1px solid rgba(244, 185, 66, 0.35);
+    border-radius: 34px;
+    background: linear-gradient(145deg, rgba(244, 185, 66, 0.13), rgba(255, 255, 255, 0.02));
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.54), 0 0 80px rgba(244, 185, 66, 0.08);
+    transform: rotate(1.2deg);
+}
+
+.hero-art-frame::before {
+    content: "";
+    position: absolute;
+    inset: 18px;
+    z-index: 1;
+    border: 1px solid rgba(255, 225, 154, 0.22);
+    border-radius: 22px;
+    pointer-events: none;
+}
+
+.hero-art-frame img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 26px;
+    object-fit: contain;
+}
+
+.hero-art-card figcaption {
+    position: absolute;
+    right: -22px;
+    bottom: 28px;
+    z-index: 2;
+    min-width: 250px;
+    display: grid;
+    padding: 14px 18px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: rgba(10, 8, 5, 0.92);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
+}
+
+.hero-art-card figcaption span {
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.hero-art-card figcaption strong {
+    margin-top: 3px;
+    font-size: 12px;
+}
+
+/* =========================
+   SHAWDY X MINU - PROMO CAROUSEL
+========================= */
+.banner-carousel-section {
+    padding: 26px 0 72px;
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: #0c0a07;
+    box-shadow: var(--shadow);
+}
+
+.carousel-track {
+    width: 100%;
+    display: flex;
+    transform: translateX(0);
+    transition: transform 0.65s cubic-bezier(.22,.7,.2,1);
+}
+
+.carousel-slide {
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+.promo-slide {
+    min-height: 400px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    align-items: center;
+    gap: 32px;
+    padding: clamp(28px, 5vw, 64px);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 86% 52%, rgba(244, 185, 66, 0.17), transparent 34%),
+        linear-gradient(120deg, #151007, #090806 66%);
+}
+
+.promo-slide-blue {
+    background:
+        radial-gradient(circle at 84% 50%, rgba(84, 216, 255, 0.18), transparent 35%),
+        linear-gradient(120deg, #071217, #08090a 66%);
+}
+
+.promo-slide-red {
+    background:
+        radial-gradient(circle at 84% 50%, rgba(255, 95, 98, 0.16), transparent 35%),
+        linear-gradient(120deg, #170909, #090706 66%);
+}
+
+.promo-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.promo-copy h2 {
+    max-width: 680px;
+    margin: 12px 0 15px;
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(30px, 4.2vw, 54px);
+    line-height: 1.08;
+}
+
+.promo-copy p {
+    max-width: 620px;
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.text-link {
+    color: var(--gold-light);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-decoration-color: rgba(244, 185, 66, 0.4);
+    text-underline-offset: 7px;
+    text-transform: uppercase;
+}
+
+.promo-slide > img {
+    justify-self: end;
+    width: min(100%, 390px);
+    max-height: 320px;
+    object-fit: contain;
+    filter: drop-shadow(0 24px 42px rgba(0, 0, 0, 0.45));
+}
+
+.promo-slide-red > img {
+    width: min(100%, 230px);
+}
+
+.carousel-controls {
+    position: absolute;
+    z-index: 5;
+    right: 24px;
+    bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.carousel-dots {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.28);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+}
+
+.carousel-dot.active {
+    width: 24px;
+    background: var(--gold);
+}
+
+.carousel-arrow {
+    padding: 8px 10px;
+    border: 1px solid var(--border-soft);
+    border-radius: 9px;
+    color: #d9d3c8;
+    background: rgba(0, 0, 0, 0.28);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* =========================
+   SHAWDY X MINU - SECTIONS
+========================= */
+.section {
+    padding: 84px 0;
+}
+
+.section-heading {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.section-kicker {
+    margin-bottom: 10px;
+}
+
+.title {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(30px, 4.4vw, 52px);
+    line-height: 1.12;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.grid {
+    display: grid;
+    gap: 18px;
+}
+
+.package-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.card {
+    position: relative;
+    min-width: 0;
+    padding: 26px;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    background: linear-gradient(145deg, rgba(25, 21, 14, 0.9), rgba(11, 10, 8, 0.96));
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.2);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+    z-index: 2;
+    border-color: rgba(244, 185, 66, 0.35);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.32);
+    transform: translateY(-5px);
+}
+
+.card.featured,
+.popular-card {
+    border-color: rgba(244, 185, 66, 0.42);
+}
+
+.card.featured {
+    background: linear-gradient(145deg, rgba(52, 39, 14, 0.72), rgba(13, 11, 7, 0.98));
+}
+
+.tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 9px;
+    border: 1px solid rgba(244, 185, 66, 0.32);
+    border-radius: 999px;
+    color: #171004;
+    background: var(--gold);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.tag.hot {
+    color: #fff;
+    background: #ba392f;
+    border-color: rgba(255, 95, 98, 0.44);
+}
+
+.package-top {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 26px;
+}
+
+.package-index {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    color: var(--gold);
+    background: rgba(244, 185, 66, 0.06);
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.card h3 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 19px;
+    line-height: 1.25;
+}
+
+.package-features {
+    display: grid;
+    gap: 0;
+    margin-bottom: 26px;
+    list-style: none;
+}
+
+.package-features li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 11px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.package-features span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.package-features strong {
+    font-size: 12px;
+    text-align: right;
+}
+
+.price {
+    color: var(--text);
+    font-family: "Orbitron", sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+
+.price small {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+}
+
+.price-wrap {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.old-price {
+    color: #756e64;
+    font-size: 11px;
+    text-decoration: line-through;
+}
+
+.package-card .btn,
+.like-card .btn {
+    margin-top: 18px;
+}
+
+.sold-count {
+    margin-top: 14px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* =========================
+   SHAWDY X MINU - DIAMOND STORE
+========================= */
+.topup-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    border-block: 1px solid rgba(155, 108, 255, 0.12);
+    background:
+        radial-gradient(circle at 8% 8%, rgba(155, 108, 255, 0.10), transparent 28rem),
+        radial-gradient(circle at 92% 32%, rgba(255, 79, 195, 0.08), transparent 30rem),
+        linear-gradient(180deg, rgba(14, 8, 24, 0.86), rgba(7, 6, 4, 0.96));
+}
+
+.topup-orb {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+.topup-orb-one {
+    top: 6%;
+    left: -160px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(155, 108, 255, 0.12), transparent 68%);
+}
+
+.topup-orb-two {
+    right: -180px;
+    bottom: 12%;
+    width: 460px;
+    height: 460px;
+    background: radial-gradient(circle, rgba(255, 79, 195, 0.09), transparent 68%);
+}
+
+.topup-heading .section-kicker,
+.topup-group-index {
+    color: #d0bfff;
+}
+
+.topup-heading .title {
+    color: transparent;
+    background: linear-gradient(90deg, #fff, #d8c9ff 40%, #ff9be1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.topup-group + .topup-group {
+    margin-top: 68px;
+}
+
+.topup-group-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(155, 108, 255, 0.16);
+}
+
+.topup-group-heading > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.topup-group-index {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 1px solid rgba(155, 108, 255, 0.28);
+    border-radius: 11px;
+    background: rgba(155, 108, 255, 0.08);
+    font-family: "Orbitron", sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+}
+
+.topup-group-heading h3 {
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(20px, 2.6vw, 30px);
+    text-transform: uppercase;
+}
+
+.topup-group-heading p {
+    max-width: 460px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: right;
+}
+
+.topup-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.topup-membership-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 930px;
+}
+
+.topup-card {
+    position: relative;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 17px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.075);
+    border-radius: 19px;
+    background: linear-gradient(150deg, rgba(28, 20, 42, 0.86), rgba(11, 9, 14, 0.96));
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.22);
+    transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+}
+
+.topup-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(145deg, rgba(155, 108, 255, 0.04), transparent 42%, rgba(255, 79, 195, 0.025));
+}
+
+.topup-card:hover {
+    z-index: 2;
+    border-color: rgba(155, 108, 255, 0.32);
+    box-shadow: 0 24px 54px rgba(0, 0, 0, 0.32);
+    transform: translateY(-4px);
+}
+
+.topup-card.is-selected {
+    border-color: rgba(255, 79, 195, 0.68);
+    background: linear-gradient(150deg, rgba(57, 30, 83, 0.9), rgba(14, 9, 19, 0.98));
+    box-shadow: 0 0 0 1px rgba(155, 108, 255, 0.18), 0 18px 50px rgba(144, 61, 255, 0.16);
+}
+
+.topup-image-stage {
+    position: relative;
+    z-index: 1;
+    min-height: 144px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(155, 108, 255, 0.11);
+    border-radius: 15px;
+    background:
+        radial-gradient(circle at center, rgba(93, 65, 161, 0.18), transparent 62%),
+        rgba(255, 255, 255, 0.018);
+}
+
+.topup-image-stage::before {
+    content: "";
+    position: absolute;
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    background: rgba(155, 108, 255, 0.08);
+    filter: blur(22px);
+}
+
+.topup-product-image {
+    position: relative;
+    z-index: 1;
+    width: min(84%, 145px);
+    max-height: 132px;
+    object-fit: contain;
+    filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.32));
+}
+
+.topup-product-image.diamond-image {
+    width: 98px;
+    image-rendering: auto;
+}
+
+.topup-product-name {
+    position: relative;
+    z-index: 1;
+    min-height: 42px;
+    margin-bottom: 8px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.topup-product-price {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 17px;
+    color: #e5d9ff;
+    font-family: "Orbitron", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+}
+
+.topup-quantity {
+    position: relative;
+    z-index: 1;
+    min-height: 46px;
+    display: grid;
+    grid-template-columns: 46px minmax(36px, 1fr) 46px;
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid rgba(155, 108, 255, 0.2);
+    border-radius: 12px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.topup-quantity-button {
+    min-width: 44px;
+    min-height: 44px;
+    border: 0;
+    color: var(--text);
+    background: rgba(155, 108, 255, 0.09);
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+.topup-quantity-button:hover:not(:disabled) {
+    color: #160b25;
+    background: #c7aaff;
+}
+
+.topup-quantity-button:disabled {
+    color: #5f5868;
+    cursor: not-allowed;
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.topup-quantity output {
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-family: "Orbitron", sans-serif;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.topup-line-total {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 12px;
+    color: #777080;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.topup-line-total strong {
+    color: #a49bad;
+    font-size: 10px;
+}
+
+.topup-card.is-selected .topup-line-total,
+.topup-card.is-selected .topup-line-total strong {
+    color: #f4c9ff;
+}
+
+.topup-checkout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.85fr);
+    gap: 18px;
+    margin-top: 74px;
+    padding-top: 28px;
+    border-top: 1px solid rgba(155, 108, 255, 0.22);
+}
+
+.topup-summary-panel,
+.topup-order-panel {
+    min-width: 0;
+    padding: 26px;
+    border: 1px solid rgba(155, 108, 255, 0.18);
+    border-radius: 22px;
+    background: rgba(13, 10, 18, 0.88);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.24);
+}
+
+.topup-summary-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.topup-summary-head h3 {
+    font-family: "Orbitron", sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.topup-cart-count {
+    flex: 0 0 auto;
+    padding: 7px 10px;
+    border: 1px solid rgba(255, 79, 195, 0.24);
+    border-radius: 999px;
+    color: #ffc7ee;
+    background: rgba(255, 79, 195, 0.07);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.topup-summary-empty {
+    margin: 20px 0;
+    padding: 18px;
+    border: 1px dashed rgba(155, 108, 255, 0.2);
+    border-radius: 14px;
+    color: #7f778a;
+    font-size: 12px;
+    text-align: center;
+}
+
+.topup-summary-list {
+    display: grid;
+    gap: 0;
+    list-style: none;
+}
+
+.topup-summary-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.topup-summary-item div {
+    min-width: 0;
+    display: grid;
+    gap: 2px;
+}
+
+.topup-summary-item strong {
+    font-size: 12px;
+}
+
+.topup-summary-item span {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.topup-summary-item > b {
+    align-self: center;
+    color: #e4d8ff;
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.topup-totals {
+    display: grid;
+    gap: 9px;
+    margin-top: 20px;
+}
+
+.topup-totals > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.topup-totals strong {
+    color: var(--text);
+    font-family: "Orbitron", sans-serif;
+}
+
+.topup-totals .topup-grand-total {
+    margin-top: 5px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(155, 108, 255, 0.2);
+    color: #d8c9ff;
+    font-size: 13px;
+}
+
+.topup-grand-total strong {
+    color: #ffd0f1;
+    font-size: 20px;
+}
+
+.topup-order-panel {
+    align-self: start;
+    background: linear-gradient(150deg, rgba(33, 20, 48, 0.9), rgba(12, 9, 16, 0.97));
+}
+
+.topup-uid-label {
+    display: grid;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.topup-uid-label span {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.topup-uid-label small,
+.topup-order-note {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.topup-uid-input {
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 14px;
+    border: 1px solid rgba(155, 108, 255, 0.24);
+    border-radius: 12px;
+    outline: none;
+    color: var(--text);
+    background: rgba(0, 0, 0, 0.24);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.topup-uid-input:focus {
+    border-color: rgba(255, 79, 195, 0.62);
+    box-shadow: 0 0 0 4px rgba(155, 108, 255, 0.09);
+}
+
+.topup-order-button {
+    width: 100%;
+    min-height: 56px;
+    margin-top: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: #13081b;
+    background: linear-gradient(135deg, #d7c4ff, var(--purple) 52%, var(--magenta));
+    box-shadow: 0 18px 40px rgba(151, 74, 255, 0.23);
+}
+
+.topup-order-button:hover {
+    box-shadow: 0 22px 48px rgba(255, 79, 195, 0.23);
+}
+
+.topup-order-note {
+    margin-top: 12px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.topup-toast {
+    display: none;
+    margin-top: 14px;
+    padding: 11px 12px;
+    border: 1px solid rgba(255, 95, 98, 0.3);
+    border-radius: 11px;
+    color: #ffc7c8;
+    background: rgba(255, 95, 98, 0.08);
+    font-size: 11px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.topup-toast.is-visible {
+    display: block;
+}
+
+@media (max-width: 1120px) {
+    .topup-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .topup-membership-grid { max-width: none; }
+    .topup-checkout { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+    .topup-group + .topup-group { margin-top: 50px; }
+    .topup-group-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .topup-group-heading p { text-align: left; }
+    .topup-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .topup-card { padding: 14px; }
+    .topup-image-stage { min-height: 124px; }
+    .topup-product-image { max-height: 112px; }
+    .topup-product-name { min-height: 40px; font-size: 12px; }
+    .topup-product-price { font-size: 17px; }
+    .topup-checkout { margin-top: 54px; }
+    .topup-summary-panel, .topup-order-panel { padding: 20px; }
+}
+
+@media (max-width: 340px) {
+    .topup-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================
+   SHAWDY X MINU - SERVER NOTICE
+========================= */
+.glory-warning {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 28px;
+    padding: 22px 24px;
+    overflow: hidden;
+    border: 1px solid rgba(84, 216, 255, 0.25);
+    border-radius: 18px;
+    background: linear-gradient(110deg, rgba(84, 216, 255, 0.08), rgba(255, 255, 255, 0.025));
+}
+
+.warning-badge-zone {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 11px;
+    border: 1px solid rgba(84, 216, 255, 0.22);
+    border-radius: 999px;
+    background: rgba(84, 216, 255, 0.06);
+}
+
+.warning-pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 14px var(--cyan);
+    animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse { 50% { opacity: 0.45; transform: scale(0.72); } }
+
+.warning-badge-text {
+    color: var(--cyan);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.warning-heading {
+    margin-bottom: 4px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.warning-desc {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.highlight-cyan {
+    color: #a5edff;
+    font-weight: 700;
+}
+
+/* =========================
+   SHAWDY X MINU - LIKES
+========================= */
+.likes-section {
+    border-block: 1px solid rgba(255,255,255,.045);
+    background: rgba(255, 255, 255, 0.014);
+}
+
+.likes-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.like-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.like-card .duration {
+    margin-bottom: 9px;
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.like-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+    margin: 24px 0;
+}
+
+.like-stats div {
+    display: grid;
+    gap: 3px;
+    padding: 13px 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.like-stats strong {
+    color: var(--gold-light);
+    font-family: "Orbitron", sans-serif;
+    font-size: 16px;
+}
+
+.like-stats span,
+.coming-soon-card p {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.coming-soon-card p {
+    margin: 22px 0;
+    font-size: 12px;
+}
+
+.price.soon {
+    margin-top: auto;
+    color: #7f786d;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+/* =========================
+   SHAWDY X MINU - RARE UID
+========================= */
+.rare-uid-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+    align-items: center;
+    gap: clamp(42px, 7vw, 96px);
+}
+
+.rare-uid-banner {
+    position: relative;
+    max-width: 470px;
+    justify-self: center;
+    padding: 8px;
+    border: 1px solid rgba(255, 95, 98, 0.24);
+    border-radius: 26px;
+    background: rgba(255, 95, 98, 0.035);
+    box-shadow: 0 32px 80px rgba(0, 0, 0, 0.4);
+}
+
+.rare-uid-banner img {
+    width: 100%;
+    max-height: 680px;
+    border-radius: 19px;
+    object-fit: contain;
+}
+
+.rare-uid-content h2 {
+    margin: 8px 0 18px;
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(34px, 5vw, 58px);
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.rare-uid-content > p {
+    max-width: 640px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.rare-uid-content .uid-label {
+    margin: 28px 0 12px;
+    color: var(--text);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.uid-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.uid-item {
+    min-width: 0;
+    padding: 13px 14px;
+    border: 1px solid var(--border-soft);
+    border-radius: 11px;
+    color: var(--gold-light);
+    background: rgba(255, 255, 255, 0.025);
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(11px, 1.3vw, 14px);
+    letter-spacing: 0.05em;
+    text-align: center;
+}
+
+.rare-uid-content .btn {
+    max-width: 390px;
+    margin-top: 24px;
+}
+
+/* =========================
+   SHAWDY X MINU - OPTIMIZER PROMO
+========================= */
+.optimizer-promo {
+    padding-top: 40px;
+}
+
+.optimizer-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.3fr) minmax(220px, 0.7fr);
+    align-items: center;
+    gap: 44px;
+    overflow: hidden;
+    padding: clamp(30px, 5vw, 66px);
+    border: 1px solid rgba(84, 216, 255, 0.21);
+    border-radius: var(--radius-lg);
+    background:
+        radial-gradient(circle at 87% 50%, rgba(84, 216, 255, 0.13), transparent 30%),
+        linear-gradient(130deg, #0b1114, #090806 68%);
+    box-shadow: var(--shadow);
+}
+
+.optimizer-copy h2 {
+    max-width: 790px;
+    margin: 9px 0 16px;
+    font-family: "Orbitron", sans-serif;
+    font-size: clamp(30px, 4vw, 50px);
+    line-height: 1.12;
+}
+
+.optimizer-copy p {
+    max-width: 700px;
+    margin-bottom: 26px;
+    color: var(--muted);
+}
+
+.optimizer-visual img {
+    width: min(100%, 260px);
+    margin-inline: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 40px rgba(84, 216, 255, 0.23));
+}
+
+/* =========================
+   SHAWDY X MINU - COMMUNITY
+========================= */
+.community-section {
+    padding: 100px 0;
+}
+
+.community-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.comm-card {
+    min-width: 0;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
+    align-items: start;
+    padding: 24px;
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.025);
+    text-decoration: none;
+    transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.comm-card:hover {
+    border-color: rgba(244, 185, 66, 0.35);
+    background: rgba(244, 185, 66, 0.045);
+    transform: translateY(-5px);
+}
+
+.comm-icon {
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-soft);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.comm-icon img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.tournament-mark {
+    color: var(--gold);
+    font-family: "Orbitron", sans-serif;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.comm-type {
+    margin-bottom: 7px;
+    color: var(--gold);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.comm-card h3 {
+    margin-bottom: 8px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 15px;
+}
+
+.comm-card p {
+    margin-bottom: 22px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.comm-btn {
+    color: var(--text);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* =========================
+   SHAWDY X MINU - FOOTER
+========================= */
+.footer {
+    padding: 34px 0;
+    border-top: 1px solid var(--border-soft);
+    background: #050403;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-brand {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-brand img {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 auto;
+    border-radius: 14px;
+}
+
+.footer-brand div {
+    display: grid;
+}
+
+.footer-brand strong {
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+}
+
+.footer-brand span,
+.legal-stack {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.footer-contact {
+    display: grid;
+    padding: 11px 20px;
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.footer-contact span {
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.footer-contact strong {
+    color: var(--gold-light);
+    font-family: "Orbitron", sans-serif;
+    font-size: 14px;
+}
+
+.legal-stack {
+    justify-self: end;
+    text-align: right;
+}
+
+.dev-credit a {
+    color: var(--gold-light);
+    text-decoration: none;
+}
+
+/* =========================
+   SHAWDY X MINU - ADMIN MODAL
+========================= */
+#adminPopupWrap {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(2, 2, 2, 0.82);
+    backdrop-filter: blur(12px);
+}
+
+#adminPopupBox {
+    width: min(100%, 480px);
+    max-height: calc(100vh - 36px);
+    overflow-y: auto;
+    padding: 30px;
+    border: 1px solid rgba(244, 185, 66, 0.28);
+    border-radius: 26px;
+    background: linear-gradient(150deg, #19140b, #090806 62%);
+    box-shadow: 0 36px 100px rgba(0, 0, 0, 0.62);
+    transform: translateY(14px) scale(0.96);
+    opacity: 0;
+    transition: transform 0.26s ease, opacity 0.26s ease;
+}
+
+#adminPopupBox.is-open {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.admin-modal-head {
+    position: relative;
+    margin-bottom: 22px;
+    padding-right: 44px;
+}
+
+#adminTitle {
+    font-family: "Orbitron", sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+#adminSub {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+#adminCloseBtn {
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--border-soft);
+    border-radius: 11px;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.admin-options {
+    display: grid;
+    gap: 12px;
+}
+
+.adminBtn {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 58px 1fr auto;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    border: 1px solid var(--border-soft);
+    border-radius: 16px;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.adminBtn:hover {
+    border-color: rgba(244, 185, 66, 0.38);
+    background: rgba(244, 185, 66, 0.06);
+    transform: translateY(-2px);
+}
+
+.adminBtn:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.admin-avatar {
+    width: 58px;
+    height: 58px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    object-fit: cover;
+}
+
+.admin-name {
+    display: grid;
+    gap: 2px;
+}
+
+.admin-name strong {
+    font-family: "Orbitron", sans-serif;
+    font-size: 12px;
+}
+
+.admin-name small,
+.admin-phone {
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.admin-phone {
+    color: var(--gold-light);
+    font-weight: 800;
+}
+
+.admin-safe-note {
+    margin-top: 18px;
+    color: #777168;
+    font-size: 9px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* =========================
+   SXS OPTIMIZER PAGE
+========================= */
+.optimizer-page {
+    background:
+        radial-gradient(circle at 15% 10%, rgba(84, 216, 255, 0.1), transparent 30rem),
+        radial-gradient(circle at 88% 30%, rgba(244, 185, 66, 0.07), transparent 28rem),
+        var(--bg);
+}
+
+.optimizer-page .brand-text b {
+    color: var(--cyan);
+}
+
+.optimizer-page .hero {
+    padding-bottom: 72px;
+}
+
+.sxs-hero .hero-grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+}
+
+.sxs-hero .hero-name {
+    color: transparent;
+    background: linear-gradient(90deg, #e9fbff, var(--cyan));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sxs-hero .hero-store {
+    font-size: clamp(48px, 7vw, 96px);
+    background: linear-gradient(180deg, #fff, #8be9ff, #1497c0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 0;
+}
+
+.download-count {
+    margin-top: 18px;
+    display: inline-flex;
+    color: #9eecff;
+}
+
+.optimizer-showcase {
+    min-height: 430px;
+    display: grid;
+    place-items: center;
+    position: relative;
+    border: 1px solid rgba(84, 216, 255, 0.2);
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(84, 216, 255, 0.12), rgba(255,255,255,.018) 58%, transparent 59%);
+}
+
+.optimizer-showcase .optimizer-gear {
+    width: min(74%, 310px);
+    filter: drop-shadow(0 0 48px rgba(84, 216, 255, 0.25));
+}
+
+.optimizer-showcase .store-seal {
+    position: absolute;
+    right: 22px;
+    bottom: 22px;
+    width: 92px;
+    height: 92px;
+    border: 2px solid rgba(244, 185, 66, 0.35);
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 16px 44px rgba(0,0,0,.42);
+}
+
+.activation-section {
+    padding-top: 62px;
+}
+
+.activation-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.step-card {
+    min-height: 230px;
+}
+
+.step-number {
+    margin-bottom: 28px;
+    color: var(--cyan);
+    font-family: "Orbitron", sans-serif;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .12em;
+}
+
+.step-card h3 {
+    margin-bottom: 12px;
+}
+
+.step-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.activation-cta {
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 1120px) {
+    .nav-links a:not(.nav-btn) { display: none; }
+    .package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .likes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1120px) {
+    .container { width: min(100% - 32px, 760px); }
+    .nav-wrap { min-height: 70px; }
+    .nav-logo { width: 46px; height: 46px; }
+    .nav-toggle { display: grid; }
+
+    .nav-panel {
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 16px;
+        right: 16px;
+        display: none;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+        border: 1px solid var(--border);
+        border-top: 0;
+        border-radius: 0 0 18px 18px;
+        background: rgba(9, 7, 5, 0.97);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+    }
+
+    .nav-panel.is-open { display: flex; }
+    .nav-links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .nav-links a:not(.nav-btn) { display: block; }
+    .nav-links a { padding: 11px 12px; border: 1px solid rgba(255,255,255,.05); }
+    .nav-links .nav-btn { margin-left: 0; }
+    .status-box { justify-content: center; }
+
+    .optimizer-page .nav-panel {
+        position: static;
+        display: flex;
+        flex: 0 0 auto;
+        align-items: center;
+        flex-direction: row;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: none;
+        box-shadow: none;
+        backdrop-filter: none;
+    }
+
+    .optimizer-page .nav-links { display: flex; }
+    .optimizer-page .nav-links .nav-btn { display: block; font-size: 10px; }
+    .optimizer-page .status-box { display: none; }
+
+    .hero { padding: 118px 0 68px; }
+    .hero-grid,
+    .sxs-hero .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+    .hero-left { text-align: center; }
+    .hero-lead { margin-inline: auto; }
+    .hero-buttons { justify-content: center; }
+    .trust-row { max-width: 650px; margin-inline: auto; margin-top: 30px; text-align: left; }
+    .hero-right { width: min(100%, 560px); margin-inline: auto; }
+    .hero-art-card figcaption { right: 18px; }
+
+    .promo-slide { min-height: 560px; grid-template-columns: 1fr; gap: 24px; padding-bottom: 74px; text-align: center; }
+    .promo-copy p { margin-inline: auto; }
+    .promo-slide > img { justify-self: center; max-height: 230px; }
+    .promo-slide-red > img { max-height: 260px; }
+    .carousel-controls { right: 50%; transform: translateX(50%); }
+
+    .section { padding: 70px 0; }
+    .glory-warning { grid-template-columns: 1fr; gap: 13px; }
+    .warning-badge-zone { width: max-content; }
+    .rare-uid-grid { grid-template-columns: 1fr; }
+    .rare-uid-banner { max-width: 390px; }
+    .rare-uid-content { text-align: center; }
+    .rare-uid-content > p { margin-inline: auto; }
+    .rare-uid-content .btn { margin-inline: auto; }
+
+    .optimizer-card { grid-template-columns: 1fr; text-align: center; }
+    .optimizer-copy p { margin-inline: auto; }
+    .optimizer-visual { grid-row: 1; }
+
+    .community-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .footer-grid { grid-template-columns: 1fr; justify-items: center; text-align: center; }
+    .legal-stack { justify-self: center; text-align: center; }
+
+    .activation-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+    .container { width: min(100% - 24px, 520px); }
+    .brand-copy small { display: none; }
+    .brand-text { font-size: 12px; }
+    .nav-logo { width: 42px; height: 42px; border-radius: 12px; }
+
+    .hero { padding-top: 106px; }
+    .hero-name { font-size: clamp(32px, 10.4vw, 48px); }
+    .hero-store { font-size: clamp(62px, 22vw, 96px); }
+    .hero-lead { font-size: 15px; }
+    .hero-buttons .btn { width: 100%; }
+    .trust-row { grid-template-columns: 1fr; }
+    .trust-row div { text-align: center; }
+    .hero-art-frame { border-radius: 24px; }
+    .hero-art-frame img { border-radius: 18px; }
+    .hero-art-card figcaption { position: relative; right: auto; bottom: auto; min-width: 0; width: calc(100% - 28px); margin: -20px auto 0; }
+
+    .banner-carousel-section { padding-bottom: 50px; }
+    .carousel-wrapper { border-radius: 20px; }
+    .promo-slide { min-height: 590px; padding: 32px 20px 74px; }
+    .promo-copy h2 { font-size: 29px; }
+
+    .section-heading { margin-bottom: 32px; }
+    .title { font-size: 29px; }
+    .subtitle { font-size: 14px; }
+    .package-grid,
+    .likes-grid,
+    .community-grid { grid-template-columns: 1fr; }
+    .card { padding: 22px; }
+    .glory-warning { padding: 18px; }
+    .warning-badge-zone { max-width: 100%; }
+    .uid-list { grid-template-columns: 1fr; }
+    .optimizer-card { padding: 32px 22px; }
+    .optimizer-copy .btn { width: 100%; }
+    .community-section { padding: 76px 0; }
+
+    #adminPopupBox { padding: 22px; border-radius: 20px; }
+    #adminTitle { font-size: 16px; }
+    .adminBtn { grid-template-columns: 52px 1fr; }
+    .admin-avatar { width: 52px; height: 52px; }
+    .admin-phone { grid-column: 2; }
+
+    .sxs-hero .hero-store { font-size: clamp(43px, 13vw, 62px); }
+    .optimizer-showcase { min-height: 330px; }
+}
+
+@media (max-width: 380px) {
+    .brand-text { font-size: 10px; }
+    .nav-links { grid-template-columns: 1fr; }
+    .hero { padding-top: 102px; }
+    .mini-badge { font-size: 9px; letter-spacing: .1em; }
+    .package-features li { align-items: flex-start; flex-direction: column; gap: 2px; }
+    .package-features strong { text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
