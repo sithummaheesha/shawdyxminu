@@ -228,14 +228,14 @@ function createPopup() {
                 <button id="adminBtn1" class="adminBtn" type="button">
                     <img class="admin-avatar" src="ASSETS/Admins/shawdy-live.webp" alt="Shawdy admin profile" width="58" height="58">
                     <span class="admin-name"><strong>Shawdy</strong><small>Store admin 01</small></span>
-                    <span class="admin-phone">070 268 0801</span>
-                </button>
-
-                <button id="adminBtn2" class="adminBtn" type="button">
-                    <img class="admin-avatar" src="ASSETS/Admins/minu-gaming.webp" alt="Minu admin profile" width="58" height="58">
-                    <span class="admin-name"><strong>Minu</strong><small>Store admin 02</small></span>
                     <span class="admin-phone">077 310 9964</span>
                 </button>
+
+                <!--<button id="adminBtn2" class="adminBtn" type="button" disabled>
+                    <img class="admin-avatar" src="ASSETS/Admins/minu-gaming.webp" alt="Minu admin profile" width="58" height="58">
+                    <span class="admin-name"><strong>Minu</strong><small>Store admin 02</small></span>
+                    <span class="admin-phone">077 000 0000</span>
+                </button>-->
             </div>
 
             <p class="admin-safe-note">The counter updates only when you choose an admin and start the WhatsApp order.</p>
@@ -314,12 +314,12 @@ async function handleAdmin(number) {
 ========================= */
 function buyGuild(squads, price) {
     const data = {
-        1: ["3 Bots", "30K - 45K"],
-        2: ["6 Bots", "60K - 90K"],
-        3: ["9 Bots", "90K - 135K"],
-        4: ["12 Bots", "120K - 180K"],
-        5: ["15 Bots", "150K - 675K"],
-        6: ["18 Bots", "180K - 810K"]
+        1: ["3 Bots", "100K - 105K"],
+        2: ["6 Bots", "150K - 200K"],
+        3: ["9 Bots", "250K - 300K"],
+        4: ["12 Bots", "300K - 350K"],
+        5: ["15 Bots", "350K - 400K"],
+        6: ["18 Bots", "400K - 450K"]
     }[squads] || ["N/A", "N/A"];
 
     pendingOrder = {
