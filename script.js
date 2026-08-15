@@ -398,7 +398,7 @@ function createTopupCard(product) {
             <img class="topup-product-image${imageClass}" src="${product.image}" alt="${product.name} package artwork" width="${imageSize}" height="${imageSize}" loading="lazy" decoding="async">
         </div>
         <h4 class="topup-product-name">${product.name}</h4>
-        <div class="topup-product-price">${formatPrice(product.price)}</div>
+        <div class="topup-product-price yellow-price-glow">${formatPrice(product.price)}</div>
         <div class="topup-quantity" aria-label="Quantity for ${product.name}">
             <button class="topup-quantity-button" type="button" data-topup-action="decrease" data-product-id="${product.id}" aria-label="Decrease ${product.name} quantity" disabled>−</button>
             <output id="${product.id}-quantity" aria-live="polite">0</output>
