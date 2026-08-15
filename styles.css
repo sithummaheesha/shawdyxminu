@@ -904,11 +904,11 @@ a:focus-visible {
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    border-block: 1px solid rgba(155, 108, 255, 0.12);
+    border-block: 1px solid rgba(231, 76, 245, 0.12);
     background:
-        radial-gradient(circle at 8% 8%, rgba(155, 108, 255, 0.10), transparent 28rem),
-        radial-gradient(circle at 92% 32%, rgba(255, 79, 195, 0.08), transparent 30rem),
-        linear-gradient(180deg, rgba(14, 8, 24, 0.86), rgba(7, 6, 4, 0.96));
+        radial-gradient(circle at 8% 8%, rgba(62, 2, 190, 0.1), transparent 28rem),
+        radial-gradient(circle at 92% 32%, rgba(56, 12, 41, 0.08), transparent 30rem),
+        linear-gradient(180deg, rgba(58, 12, 88, 0.86), rgba(7, 6, 4, 0.96));
 }
 
 .topup-orb {

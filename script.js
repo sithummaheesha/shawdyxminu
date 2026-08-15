@@ -20,13 +20,13 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 /* =========================
-   SHAWDY X MINU - CONSTANTS
+   SHAWDY - CONSTANTS
 ========================= */
 const ADMIN_1 = "94773109964";
 const ADMIN_2 = "94743412102";
 const OPEN_TIME = 990;   // 4:30 PM, Colombo time
 const CLOSE_TIME = 1350; // 10:30 PM, Colombo time
-const STORE_NAME = "SHAWDY X MINU STORE";
+const STORE_NAME = "SHAWDY STORE";
 
 const topupProducts = [
     // =========================
@@ -253,7 +253,7 @@ function createPopup() {
         handleAdmin(ADMIN_1);
     });
 
-    $("adminBtn2").addEventListener("click", event => {
+    $("adminBtn2")?.addEventListener("click", event => {
         event.stopPropagation();
         handleAdmin(ADMIN_2);
     });
@@ -497,7 +497,7 @@ function buildTopupOrder() {
     ].join("\n"));
 
     const message = [
-        `💎 SHAWDY × MINU STORE`,
+        `💎 SHAWDY STORE`,
         `TOP-UP ORDER`,
         ``,
         `Hello, I would like to place the following order:`,
