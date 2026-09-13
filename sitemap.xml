@@ -6,38 +6,83 @@
     <loc>https://www.shawdystore.com/</loc>
     <lastmod>2026-08-15</lastmod>
 
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Branding/shawdy-minu-store.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Banners/rare-uid.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Admins/shawdy-live.webp</image:loc></image:image>
-
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-25.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-100.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-310.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-520.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-1060.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-2180.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-5600.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-11500.webp</image:loc></image:image>
-
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Memberships/weekly-lite.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Memberships/weekly.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Memberships/monthly.webp</image:loc></image:image>
-
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/little-pack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/vip-pack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/vip-special.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/big-pack.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/super-vip.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/diamond-3000.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/diamond-5000.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/diamond-8000.webp</image:loc></image:image>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/diamond-10000.webp</image:loc></image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Branding/shawdy-minu-store.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Banners/rare-uid.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Admins/shawdy-live.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-25.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-100.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-310.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-520.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-1060.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-2180.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-5600.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Diamonds/diamond-11500.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Memberships/weekly-lite.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Memberships/weekly.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Memberships/monthly.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/little-pack.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/vip-pack.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/vip-special.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/big-pack.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/super-vip.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/diamond-3000.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/diamond-5000.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/diamond-8000.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Top-Up/Membership-Packs/diamond-10000.webp</image:loc>
+    </image:image>
   </url>
 
   <url>
     <loc>https://www.shawdystore.com/optimizer.html</loc>
     <lastmod>2026-08-15</lastmod>
-    <image:image><image:loc>https://www.shawdystore.com/ASSETS/Branding/shawdy-minu-store.webp</image:loc></image:image>
+    <image:image>
+      <image:loc>https://www.shawdystore.com/ASSETS/Branding/shawdy-minu-store.webp</image:loc>
+    </image:image>
   </url>
 
   <url>
